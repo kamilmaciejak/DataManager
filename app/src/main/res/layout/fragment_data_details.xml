@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".data.DataDetailsFragment">
+
+    <TextView
+        android:id="@+id/data_details_title_text_view"
+        style="@style/PinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_details_title_text"
+        app:layout_constraintBottom_toTopOf="@id/data_details_title_edit_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/data_details_title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:hint="@string/data_details_title_edit_text_hint"
+        android:inputType="textCapSentences"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/data_details_text_edit_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_details_title_text_view" />
+
+    <EditText
+        android:id="@+id/data_details_text_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/data_details_text_edit_text_hint"
+        android:inputType="textCapSentences|textMultiLine"
+        android:lines="7"
+        app:layout_constraintBottom_toTopOf="@+id/data_details_pin_check_box"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_details_title_edit_text" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/data_details_pin_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/data_details_pin_check_box_text"
+        app:layout_constraintBottom_toTopOf="@+id/data_details_save_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_details_text_edit_text" />
+
+    <Button
+        android:id="@+id/data_details_save_btn"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:text="@string/data_details_save_btn_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data_details_pin_check_box" />
+
+    <Button
+        android:id="@+id/data_details_delete_btn"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/data_details_delete_btn_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

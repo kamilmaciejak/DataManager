@@ -1,0 +1,92 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_config">
+
+    <TextView
+        android:id="@+id/pin_text_view"
+        style="@style/PinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_text"
+        app:layout_constraintLeft_toLeftOf="@+id/pin_grid_layout" />
+
+    <TextView
+        android:id="@+id/pin_value_text_view"
+        style="@style/PinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toRightOf="@+id/pin_text_view" />
+
+    <GridLayout
+        android:id="@+id/pin_grid_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:columnCount="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_text_view">
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_1_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_2_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_3_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_4_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_5_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_6_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_7_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_8_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="updatePin"
+            android:text="@string/pin_9_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:layout_columnSpan="2"
+            android:layout_gravity="end"
+            android:onClick="updatePin"
+            android:text="@string/pin_0_btn_text" />
+
+        <Button
+            style="@style/CustomButton"
+            android:onClick="deletePin"
+            android:text="@string/pin_del_btn_text" />
+
+    </GridLayout>
+
+</merge>

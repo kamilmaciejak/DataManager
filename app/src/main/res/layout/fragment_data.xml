@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".data.DataFragment">
+
+    <TextView
+        android:id="@+id/data_list_title_text_view"
+        style="@style/PinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_list_title_text"
+        app:layout_constraintBottom_toTopOf="@id/data_recycler_view"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/data_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin"
+        app:layout_constraintBottom_toTopOf="@+id/data_list_add_btn"
+        app:layout_constraintTop_toBottomOf="@id/data_list_title_text_view" />
+
+    <!--<ListView-->
+        <!--android:id="@+id/data_list_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginTop="@dimen/margin"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/data_list_add_btn"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/data_list_title_text_view" />-->
+
+    <Button
+        android:id="@+id/data_list_add_btn"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:text="@string/data_list_add_btn_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data_recycler_view" />
+
+</android.support.constraint.ConstraintLayout>
