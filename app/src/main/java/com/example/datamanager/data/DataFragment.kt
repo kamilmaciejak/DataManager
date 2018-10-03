@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.datamanager.DataManagerApplication
 import com.example.datamanager.R
+import com.example.datamanager.data.example.ExampleData1
+import com.example.datamanager.data.example.ExampleData2
 import com.example.datamanager.database.Data
 import kotlinx.android.synthetic.main.fragment_data.*
 
@@ -73,6 +75,12 @@ class DataFragment : Fragment() {
     private fun setupDataRecycler(dataList: List<Data>) {
         data_recycler_view.addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
         data_recycler_view.layoutManager = LinearLayoutManager(activity)
-        data_recycler_view.adapter = DataItemRecyclerAdapter(dataList) { data -> onItemClick(data) }
+//        data_recycler_view.adapter = DataItemRecyclerAdapter(dataList) { data -> onItemClick(data) }
+
+        val exampleDataList = listOf(ExampleData1(1, "Jeden"), ExampleData2(2, "Dwa"))
+        val adapter = DataRecyclerListAdapter { data -> onItemClick(data) }
+        data_recycler_view.adapter = adapter
+        adapter.submitList(exampleDataList)
+
     }
 }
