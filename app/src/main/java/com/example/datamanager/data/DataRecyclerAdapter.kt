@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.data_list_item.view.*
 
 class DataRecyclerAdapter(
         private val dataList: List<Data>,
-        private val onItemClickListener: OnItemClickListener
+        private val clickListener: (Data) -> Unit
 ) : RecyclerView.Adapter<DataRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,25 +20,19 @@ class DataRecyclerAdapter(
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return dataList.size
-    }
+    override fun getItemCount(): Int = dataList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataList[position])
+        holder.bind(dataList[position], clickListener)
     }
 
-    interface OnItemClickListener {
-        fun onItemClick(data: Data)
-    }
-
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val titleTextView: TextView = view.data_list_item_title_text_view
 
-        fun bind(data: Data) {
+        fun bind(data: Data, clickListener: (Data) -> Unit) {
             titleTextView.text = data.title
-            itemView.setOnClickListener { onItemClickListener.onItemClick(data) }
+            itemView.setOnClickListener { clickListener(data) }
         }
     }
 }

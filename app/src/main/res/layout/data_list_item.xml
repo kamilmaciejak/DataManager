@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/margin">
+<layout xmlns:bind="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/data_list_item_title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <data>
 
-</android.support.constraint.ConstraintLayout>
+        <variable
+            name="dataItem"
+            type="com.example.datamanager.database.Data" />
+    </data>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin">
+
+        <TextView
+            android:id="@+id/data_list_item_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dataItem.title}" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

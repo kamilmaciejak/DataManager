@@ -1,5 +1,7 @@
 package com.example.datamanager.database;
 
+import android.databinding.Bindable;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Property;
@@ -12,6 +14,7 @@ public class Data {
     private Long id;
 
     @Property(nameInDb = "title")
+    @Bindable
     private String title;
 
     @Property(nameInDb = "text")

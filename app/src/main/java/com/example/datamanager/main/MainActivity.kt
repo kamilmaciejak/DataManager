@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.datamanager.PIN_OK
-import com.example.datamanager.PREFERENCES_PIN
 import com.example.datamanager.PREFERENCES
-import com.example.datamanager.pin.PinActivity
+import com.example.datamanager.PREFERENCES_PIN
 import com.example.datamanager.R
 import com.example.datamanager.config.ConfigActivity
 import com.example.datamanager.data.DataActivity
+import com.example.datamanager.pin.PinActivity
+
 
 class MainActivity : AppCompatActivity() {
 

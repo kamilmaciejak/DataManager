@@ -14,7 +14,7 @@ import com.example.datamanager.database.Data
 import kotlinx.android.synthetic.main.fragment_data.*
 
 
-class DataFragment : Fragment(), DataRecyclerAdapter.OnItemClickListener {
+class DataFragment : Fragment() {
 
     companion object {
         @JvmStatic
@@ -56,7 +56,7 @@ class DataFragment : Fragment(), DataRecyclerAdapter.OnItemClickListener {
 //        }
     }
 
-    override fun onItemClick(data: Data) {
+    private fun onItemClick(data: Data) {
         listener?.checkPinAndShowDataDetails(data.pinActive, data.id)
     }
 
@@ -73,6 +73,6 @@ class DataFragment : Fragment(), DataRecyclerAdapter.OnItemClickListener {
     private fun setupDataRecycler(dataList: List<Data>) {
         data_recycler_view.addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
         data_recycler_view.layoutManager = LinearLayoutManager(activity)
-        data_recycler_view.adapter = DataRecyclerAdapter(dataList, this)
+        data_recycler_view.adapter = DataItemRecyclerAdapter(dataList) { data -> onItemClick(data) }
     }
 }
